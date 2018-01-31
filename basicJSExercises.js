@@ -11,9 +11,9 @@ Output:
  --------------------------- */
 
 function percentage(number, percentage) {
-  return "No code yet";
+  return number*(percentage/100);
 }
-console.log("Percentage Calculator:");
+console.log("Percentage Calculator: ", percentage(200,60));
 /* Uncomment the following to check */
   // console.log(percentage(2000, 37.12));
   // console.log(percentage(450, 56.5));
@@ -33,9 +33,9 @@ Output:
  --------------------------- */
 
  function areaTriangle(base, height) {
-   return "No code yet";
+   return .5*base*height;
  }
- console.log("Triangle Area Calculator:");
+ console.log("Triangle Area Calculator:", (10,25));
  /* Uncomment the following to check */
    // console.log(areaTriangle(2, 7));
    // console.log(areaTriangle(20, 56.5));
@@ -60,11 +60,15 @@ cat
 HINT: Use substring()
  --------------------------- */
 
-function rotate_string(text) {
-  console.log(text);
-}
+ function rotateString(str) {
+   if (str === "") // This is the terminal case that will end the recursion
+     return "";
 
-console.log("Rotate String:");
+   else
+ return rotateString(str.substr(1)) + str.charAt(0);
+ }
+
+console.log("Rotate String: " ,rotateString("doggo") );
 /* Uncomment the following to check */
   //rotate_string("cat");
   //rotate_string("pseudonym")
@@ -85,10 +89,13 @@ HINT: Use split() and substring()
  --------------------------- */
 
 function protect_email(email) {
-  return "protected email";
+
+var splitted = email.split('@');
+var show = splitted[0].slice(0,splitted[0].length/2)
+return(show + '...@' + splitted[1])
 }
 
-console.log("Protected email:");
+console.log("Protected email:" , protect_email("nayem.abs@gmail.com"));
 /* Uncomment the following to check */
   //console.log(protect_email("harry_potter@gmail.com"));
   //console.log(protect_email("sarah.connor@gmail.com"));
@@ -109,10 +116,11 @@ HINT: Use indexOf() and slice()
  --------------------------- */
 
 function remove_first_occurrence(text, searchstring) {
-  return "edited text";
+  text = text.replace(searchstring+' ', '');
+  return text;
 }
 
-console.log("Remove First Occurrence:");
+console.log(remove_first_occurrence("the quick brown fox jumps over the lazy dog", 'the'));
 /* Uncomment the following to check */
   //console.log(remove_first_occurrence("The quick brown fox jumps over the lazy dog", 'the'));
   //console.log(remove_first_occurrence("Drastic times call for drastic measures", 'drastic'));
